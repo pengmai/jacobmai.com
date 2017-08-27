@@ -1,0 +1,31 @@
+.tagline-upper {
+    line-height: 0.1;
+}
+
+.tagline-lower {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    max-width: 500px;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.social-icon {
+    height: 30px;
+    width: 30px;
+    color: black;
+}
