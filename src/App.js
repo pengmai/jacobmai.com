@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
+import { PageHeader, Grid, Row, Col, Nav, Navbar, NavItem } from 'react-bootstrap';
 import './App.css';
-import musicImg from './musicIcon.png';
-import codeImg from './codeIcon.png';
-import atIcon from './at.png';
-import speechBubble from './speechbubble.png';
 // Icons
 import Youtube from 'react-icons/lib/fa/youtube-square';
 import Github from 'react-icons/lib/fa/github';
@@ -22,27 +18,18 @@ function HomeHeader() {
 }
 
 function HomeNavigation() {
-  let xs = 6;
-  let sm = 6;
-  let md = 6;
-  let lg = 6;
   return(
-    <Grid>
-      <Row>
-        <Col xs={xs} sm={sm} md={md} lg={lg}>
-          <Thumbnail href="#" src={musicImg} alt="Music" responsive className="center-block"/>
-        </Col>
-        <Col xs={xs} sm={sm} md={md} lg={lg}>
-          <Thumbnail href="#" src={codeImg} alt="Code" responsive className="center-block"/>
-        </Col>
-        <Col xs={xs} sm={sm} md={md} lg={lg}>
-          <Thumbnail href="#" src={speechBubble} alt="Blog" responsive className="center-block"/>
-        </Col>
-        <Col xs={xs} sm={sm} md={md} lg={lg}>
-          <Thumbnail href="#" src={atIcon} alt="Contact" responsive className="center-block"/>
-        </Col>
-      </Row>
-    </Grid>
+    <Navbar fluid collapseOnSelect>
+      <Navbar.Toggle />
+      <Navbar.Collapse>
+        <Nav pullRight>
+          <NavItem eventKey={1} href='#'>Music</NavItem>
+          <NavItem eventKey={2} href='#'>Code</NavItem>
+          <NavItem eventKey={3} href='#'>About</NavItem>
+          <NavItem eventKey={4} href='#'>Contact</NavItem>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
@@ -74,13 +61,6 @@ function Footer() {
       </Row>
     </Grid>
   );
-  // return (
-  //   <footer className="text-center">
-  //     <div className="container">
-  //       <p><em>Copyright &copy; Jacob Mai 2017</em></p>
-  //     </div>
-  //   </footer>
-  // );
 }
 class App extends Component {
   render() {
