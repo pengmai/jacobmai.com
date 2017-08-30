@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { ExternalLink } from './commonComponents.js';
 
 // Icons
 import Youtube from 'react-icons/lib/fa/youtube-square';
@@ -11,25 +12,19 @@ export function Footer() {
     <Grid className='footer'>
       <Row>
         <Col xs={4}>
-          <a href='https://www.youtube.com/channel/UCwzBKt0x2hl66aaL2QuqF0w'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Youtube className='social-icon'/>
-          </a>
+          <ExternalLink href='https://www.youtube.com/channel/UCwzBKt0x2hl66aaL2QuqF0w'
+            label={<Youtube className='social-icon'/>}
+          />
         </Col>
         <Col xs={4}>
-          <a href='https://github.com/pengmai'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Github className='social-icon'/>
-          </a>
+          <ExternalLink href='https://github.com/pengmai'
+            label={<Github className='social-icon'/>}
+          />
         </Col>
         <Col xs={4}>
-          <a href='https://www.facebook.com/jacob.peng.5'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Facebook className='social-icon'/>
-          </a>
+          <ExternalLink href='https://www.facebook.com/jacob.peng.5'
+            label={<Facebook className='social-icon'/>}
+          />
         </Col>
       </Row>
     </Grid>
