@@ -44,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
+        <Router className='body'>
           <div>
             <Navigation/>
             <Route exact path='/' component={HomeHeader}/>

@@ -58,7 +58,7 @@ export function About() {
                 </li>
                 <li>
                   If you&#39;d like to get in touch, you can reach me at&#8194;
-                  <strong>jacobmpeng@gmail.com</strong>
+                  <strong>jacobmpeng@gmail.com</strong>.
                 </li>
               </ul>
             </p>
