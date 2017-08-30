@@ -7,17 +7,25 @@
     font-style: italic;
 }
 
-.page-header {
+#home-page-header {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.page-header {
+    padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
     width: 80%;
 }
 
 .nav, .navbar, .navbar-toggle {
     background-color: #FFF;
     border: none;
+    margin-bottom: 0;
 }
 
 .nav, .navbar-collapse {

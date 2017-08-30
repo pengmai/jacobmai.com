@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PageHeader } from 'react-bootstrap';
 import { Footer } from './Footer.js';
 import { Navigation } from './Navigation.js';
+import { About } from './About.js';
 import './App.css';
 
 // Routing.
@@ -12,7 +13,7 @@ import {
 
 function HomeHeader() {
   return (
-    <PageHeader className='text-center'>
+    <PageHeader id='home-page-header' className='text-center'>
       <div className='tagline-upper'>Jacob Mai</div>
       <small className='tagline-lower'>
         Musician, Developer, Tester
@@ -23,25 +24,19 @@ function HomeHeader() {
 
 function Code() {
   return (
-    <h2 className='text-center'>Code</h2>
+    <PageHeader className='text-center'>Code</PageHeader>
   );
 }
 
 function Music() {
   return (
-    <h2 className='text-center'>Music</h2>
+    <PageHeader className='text-center'>Music</PageHeader>
   );
 }
 
 function Blog() {
   return (
-    <h2 className='text-center'>Blog</h2>
-  );
-}
-
-function About() {
-  return (
-    <h2 className='text-center'>About/Contact</h2>
+    <PageHeader className='text-center'>Blog</PageHeader>
   );
 }
 

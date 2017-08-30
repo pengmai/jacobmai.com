@@ -1,0 +1,13 @@
+#me {
+	height: 150px;
+	width: 150px;
+	float: left;
+	position: relative;
+	left: 50%;
+	margin-left: -75px;
+	margin-bottom: 15px;
+}
+
+a, a:hover, a:focus {
+	text-decoration: none;
+}
