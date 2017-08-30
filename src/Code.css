@@ -1,0 +1,7 @@
+.preview {
+	max-width: 300px;
+	float: left;
+	position: relative;
+	left: 50%;
+	margin-left: -150px;
+}

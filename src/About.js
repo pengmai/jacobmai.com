@@ -1,12 +1,15 @@
 import React from 'react';
 import { PageHeader, Image, Grid, Row, Col } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents.js';
-import me from './me.jpg';
+import { Navigation } from './Navigation.js';
+import { Footer } from './Footer.js';
+import me from './me_original.jpg';
 import './About.css';
 
 export function About() {
   return (
     <div>
+      <Navigation/>
       <PageHeader className='text-center'>About</PageHeader>
       <Grid>
         <Row>
@@ -65,6 +68,7 @@ export function About() {
           </Col>
         </Row>
       </Grid>
+      <Footer/>
     </div>
   );
 }

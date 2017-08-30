@@ -3,6 +3,7 @@ import { PageHeader } from 'react-bootstrap';
 import { Footer } from './Footer.js';
 import { Navigation } from './Navigation.js';
 import { About } from './About.js';
+import { Code } from './Code.js';
 import './App.css';
 
 // Routing.
@@ -13,30 +14,36 @@ import {
 
 function HomeHeader() {
   return (
-    <PageHeader id='home-page-header' className='text-center'>
-      <div className='tagline-upper'>Jacob Mai</div>
-      <small className='tagline-lower'>
-        Musician, Developer, Tester
-      </small>
-    </PageHeader>
-  );
-}
-
-function Code() {
-  return (
-    <PageHeader className='text-center'>Code</PageHeader>
+    <div>
+      <Navigation/>
+      <PageHeader id='home-page-header' className='text-center'>
+        <div className='tagline-upper'>Jacob Mai</div>
+        <small className='tagline-lower'>
+          Musician, Developer, Tester
+        </small>
+      </PageHeader>
+      <Footer/>
+    </div>
   );
 }
 
 function Music() {
   return (
-    <PageHeader className='text-center'>Music</PageHeader>
+    <div>
+      <Navigation/>
+      <PageHeader className='text-center'>Music</PageHeader>
+      <Footer/>
+    </div>
   );
 }
 
 function Blog() {
   return (
-    <PageHeader className='text-center'>Blog</PageHeader>
+    <div>
+      <Navigation/>
+      <PageHeader className='text-center'>Blog</PageHeader>
+      <Footer/>
+    </div>
   );
 }
 
@@ -46,7 +53,6 @@ class App extends Component {
       <div>
         <Router className='body'>
           <div>
-            <Navigation/>
             <Route exact path='/' component={HomeHeader}/>
             <Route path='/music' component={Music}/>
             <Route path='/code' component={Code}/>
@@ -54,7 +60,6 @@ class App extends Component {
             <Route path='/about' component={About}/>
           </div>
         </Router>
-        <Footer/>
       </div>
     );
   }

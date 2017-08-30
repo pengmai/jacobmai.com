@@ -1,0 +1,107 @@
+.board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  border-collapse: collapse;
+  border: 3px solid #ccc;
+}
+
+.square {
+  color: #ccc;
+  background: white;
+  border: 2px solid white;
+  font-family: Arial;
+  font-size: 26px;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  width: 36px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+span {
+  position: relative;
+  top: -1px;
+}
+
+#solve-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(400%);
+  width: 342px;
+}
+
+#solve-button {
+  width: 297px;
+}
+
+.dropup-item {
+  width: 339px;
+  text-align: center;
+  color: black;
+}
+
+
+/* iPhone 5 */
+@media only screen and (max-width: 320px) {
+  .square {
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+  }
+
+  #solve-group {
+    width: 315px;
+  }
+
+  #solve-button {
+    width: 272px;
+  }
+
+  .dropup-item {
+    width: 312px;
+  }
+}
+
+/* iPad and larger desktop screens */
+@media only screen and (min-width: 600px) and (min-height: 660px) {
+  .square {
+    height: 56px;
+    line-height: 56px;
+    width: 56px;
+  }
+  
+  #solve-group {
+    transform: translateX(-50%) translateY(600%);
+    width: 523px;
+  }
+
+  #solve-button {
+    width: 478px;
+  }
+
+  .dropup-item {
+    width: 520px;
+  }
+}
+
+.square:focus {
+  outline: none;
+  border: 2px solid #ccc;
+}
+
+td {
+  border: 1px solid #ccc;
+}
+
+td:nth-child(3n) {
+  border-right: 3px solid #ccc;
+}
+
+tr:nth-child(3n) td {
+  border-bottom: 3px solid #ccc;
+}
