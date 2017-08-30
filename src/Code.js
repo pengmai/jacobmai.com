@@ -4,7 +4,7 @@ import { ExternalLink } from './commonComponents.js';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
 import SudokuSolver from './sudokusolver/main.js'
-import sudokuImg from './sudoku.png';
+import sudokuImg from './sudokusolver/sudoku.png';
 import './Code.css';
 
 // Routing.
