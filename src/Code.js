@@ -38,10 +38,15 @@ function Menu({ match }) {
         </Row>
         <Row>
           <Col xs={12}>
-            <LinkContainer className='preview'
-              to={`${match.url}/sudokusolver`}>
-              <Thumbnail src={sudokuImg}/>
-            </LinkContainer>
+              <LinkContainer className='preview'
+                to={`${match.url}/sudokusolver`}>
+                <figure>
+                  <Thumbnail src={sudokuImg}/>
+                  <span className='caption'>
+                    <span>Sudoku Solver</span>
+                  </span>
+                </figure>
+              </LinkContainer>
           </Col>
         </Row>
       </Grid>
