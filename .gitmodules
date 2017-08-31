@@ -1,0 +1,3 @@
+[submodule "src/sudokusolver"]
+	path = src/sudokusolver
+	url = https://github.com/pengmai/sudokufrontend.git
