@@ -3,6 +3,7 @@ import { PageHeader } from 'react-bootstrap';
 import { Footer } from './Footer.js';
 import { Navigation } from './Navigation.js';
 import { About } from './About.js';
+import { Blog } from './Blog.js';
 import { Code } from './Code.js';
 import './App.css';
 
@@ -32,16 +33,6 @@ function Music() {
     <div>
       <Navigation/>
       <PageHeader className='text-center'>Music</PageHeader>
-      <Footer/>
-    </div>
-  );
-}
-
-function Blog() {
-  return (
-    <div>
-      <Navigation/>
-      <PageHeader className='text-center'>Blog</PageHeader>
       <Footer/>
     </div>
   );

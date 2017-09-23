@@ -17,7 +17,7 @@ export function About() {
             <Image id='me' src={me} alt='me' circle/>
           </Col>
           <Col xs={12} sm={9} md={10}>
-            <p>
+            <div>
               Hello! I&#39;m Jacob, a singer-songwriter and third year Computer
               Science student studying at the University of Toronto.
               <br/> <br/>
@@ -64,7 +64,7 @@ export function About() {
                   <strong>jacobmpeng@gmail.com</strong>.
                 </li>
               </ul>
-            </p>
+            </div>
           </Col>
         </Row>
       </Grid>
