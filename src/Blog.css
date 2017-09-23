@@ -2,3 +2,11 @@
 	font-size: 0.8em;
 	color: #777;
 }
+
+.title {
+	color: #555;
+}
+
+.title:hover {
+	color: black;
+}

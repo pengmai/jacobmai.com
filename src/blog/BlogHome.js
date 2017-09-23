@@ -5,7 +5,11 @@ import {
 } from './commonBlogComponents.js';
 import range from 'lodash/range';
 
+// Routing.
+import { LinkContainer } from 'react-router-bootstrap';
+
 function PostHighlight(props) {
+  let id = props.post.id;
   let title = props.post.title;
   let body = props.post.body;
   let numberofcomments = props.post.numberofcomments;
@@ -13,7 +17,9 @@ function PostHighlight(props) {
 
   return (
     <div>
-      <h2>{title}</h2>
+      <LinkContainer to={`${props.match.url}/${id}`}>
+        <a><h2 className='title'>{title}</h2></a>
+      </LinkContainer>
       <p style={{whiteSpace: 'pre-line'}}>
         {body}
       </p>
@@ -25,8 +31,8 @@ function PostHighlight(props) {
 }
 
 export class BlogHome extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       topTenPosts: [],
@@ -69,7 +75,7 @@ export class BlogHome extends Component {
             return (
               <Row key={i}>
                 <Col xs={12}>
-                  <PostHighlight post={topTen[i]}/>
+                  <PostHighlight post={topTen[i]} match={this.props.match}/>
                 </Col>
               </Row>
             );
