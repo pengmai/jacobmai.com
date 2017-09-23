@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { PageHeader } from 'react-bootstrap';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import { NumberOfComments, Tags } from './blog/commonBlogComponents.js';
 import { BlogHome } from './blog/BlogHome.js';
 import './Blog.css';
 
