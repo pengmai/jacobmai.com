@@ -1,6 +1,7 @@
 .grayed {
 	font-size: 0.8em;
 	color: #777;
+	margin-bottom: 0;
 }
 
 .title {
@@ -9,4 +10,14 @@
 
 .title:hover {
 	color: black;
+}
+
+.underline {
+	margin: auto;
+	border-bottom: 1px solid #eee;
+	width: 80%;
+}
+
+.loading {
+	color: #777;
 }

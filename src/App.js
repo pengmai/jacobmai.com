@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router className='body'>
+        <Router basename='/' className='body'>
           <div>
             <Route exact path='/' component={HomeHeader}/>
             <Route path='/music' component={Music}/>

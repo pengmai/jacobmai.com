@@ -1,34 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import {
-  NumberOfComments, Tags, checkStatus, parseJSON
+  PostHighlight, checkStatus, parseJSON
 } from './commonBlogComponents.js';
 import range from 'lodash/range';
-
-// Routing.
-import { LinkContainer } from 'react-router-bootstrap';
-
-function PostHighlight(props) {
-  let id = props.post.id;
-  let title = props.post.title;
-  let body = props.post.body;
-  let numberofcomments = props.post.numberofcomments;
-  let tags = props.post.tags;
-
-  return (
-    <div>
-      <LinkContainer to={`${props.match.url}/${id}`}>
-        <a><h2 className='title'>{title}</h2></a>
-      </LinkContainer>
-      <p style={{whiteSpace: 'pre-line'}}>
-        {body}
-      </p>
-      <NumberOfComments numberofcomments={numberofcomments}/>
-      <Tags tags={tags}/>
-      <br/>
-    </div>
-  );
-}
 
 export class BlogHome extends Component {
   constructor(props) {
@@ -53,8 +28,8 @@ export class BlogHome extends Component {
         loading: false
       }))
       .catch(err => {this.setState({
-        error: true,
-        loading: false
+        loading: false,
+        error: true
       })});
   }
 
@@ -62,7 +37,7 @@ export class BlogHome extends Component {
     let topTen = this.state.topTenPosts;
     if (this.state.loading) {
       return (
-        <p>Loading posts...</p>
+        <p className='loading'>Loading posts...</p>
       );
     } else if (this.state.error) {
       return (
