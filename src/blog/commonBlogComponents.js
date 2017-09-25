@@ -1,6 +1,7 @@
 import React from 'react';
 import range from 'lodash/range';
 import { LinkContainer } from 'react-router-bootstrap';
+import { formatDate } from './dateformatter.js';
 
 export function checkStatus(response) {
   if (response.ok) {
@@ -59,6 +60,8 @@ export function PostHighlight(props) {
   let title = props.post.title;
   let body = props.post.body;
   let numberofcomments = props.post.numberofcomments;
+  let lastupdated = formatDate(new Date(props.post.lastupdated + ' UTC'));
+
   let tags = props.post.tags;
 
   return (
@@ -70,6 +73,9 @@ export function PostHighlight(props) {
         {body}
       </p>
       <Tags tags={tags}/>
+      <p className='grayed text-center'>
+        Last Updated: {lastupdated.toString()}
+      </p>
       <NumberOfComments numberofcomments={numberofcomments}/>
       <br/>
       <div className='underline'/>

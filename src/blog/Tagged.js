@@ -50,7 +50,9 @@ export class Tagged extends Component {
       );
     } else if (this.state.error) {
       return (
-        <p>An error has occurred. Please try again.</p>
+        <p className='text-center loading'>
+          An error has occurred. Please try again.
+        </p>
       );
     }
 
