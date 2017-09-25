@@ -21,7 +21,7 @@ function throwError(response) {
   throw error;
 }
 
-function Tags(props) {
+export function Tags(props) {
   if (props.tags.length === 0) {
     return null;
   }
@@ -74,7 +74,7 @@ export function PostHighlight(props) {
       </p>
       <Tags tags={tags}/>
       <p className='grayed text-center'>
-        Last Updated: {lastupdated.toString()}
+        Last updated {lastupdated}
       </p>
       <NumberOfComments numberofcomments={numberofcomments}/>
       <br/>

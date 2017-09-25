@@ -18,8 +18,8 @@ export class Tagged extends Component {
   }
 
   retrievePosts(tag) {
-    let req = new Request('../../api/v1/blogapi.php?request=tags/' + tag);
-    return fetch(req)
+    let req = new Request('/api/v1/blogapi.php?request=tags/' + tag);
+    fetch(req)
       .then(checkStatus)
       .then(parseJSON)
       .then(responseBody => {

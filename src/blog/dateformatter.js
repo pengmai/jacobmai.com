@@ -14,7 +14,7 @@ export function formatDate(date) {
       'September', 'October', 'November', 'December'
     ];
 
-    return MONTHS[date.getMonth()] + ' ' + date.getDate() + ', '
+    return 'on ' + MONTHS[date.getMonth()] + ' ' + date.getDate() + ', '
       + date.getFullYear() + ', '+ formatTime(date);
   } else if (deltatime > (DAY_IN_MILLISECONDS * 2)) {
     // Within the last week
@@ -22,7 +22,7 @@ export function formatDate(date) {
     return deltaDays + ' days ago, ' + formatTime(date);
   } else if (deltatime > DAY_IN_MILLISECONDS) {
     // Yesterday
-    return 'Yesterday, ' + formatTime(date);
+    return 'yesterday, ' + formatTime(date);
   } else if (deltatime > HOUR_IN_MILLISECONDS) {
     // More than an hour ago
     let deltaHours = deltatime / HOUR_IN_MILLISECONDS;
@@ -35,7 +35,7 @@ export function formatDate(date) {
     // Less than an hour ago
     let deltaMinutes = deltatime / MINUTE_IN_MILLISECONDS;
     if (deltaMinutes < 1) {
-      return 'Less than a minute ago';
+      return 'less than a minute ago';
     } else if (deltaMinutes === 1) {
       return deltaMinutes + ' minute ago';
     } else {
@@ -45,12 +45,6 @@ export function formatDate(date) {
 }
 
 function formatTime(date) {
-  // let hours = date.getHours();
-  // if (hours < 12) {
-  //   return hours + ':' + date.getMinutes() + 'AM';
-  // } else {
-  //   return (hours - 12) + ':' + date.getMinutes() + 'PM';
-  // }
   const dStr = date.toLocaleTimeString();
   return dStr.substring(0, dStr.indexOf(':', dStr.indexOf(':') + 1))
     + dStr.substring(dStr.lastIndexOf(' '));
