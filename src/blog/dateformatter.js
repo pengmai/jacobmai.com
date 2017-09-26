@@ -25,7 +25,7 @@ export function formatDate(date) {
     return 'yesterday, ' + formatTime(date);
   } else if (deltatime > HOUR_IN_MILLISECONDS) {
     // More than an hour ago
-    let deltaHours = deltatime / HOUR_IN_MILLISECONDS;
+    let deltaHours = Math.floor(deltatime / HOUR_IN_MILLISECONDS);
     if (deltaHours === 1) {
       return deltaHours + ' hour ago';
     } else {

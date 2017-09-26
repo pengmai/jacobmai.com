@@ -2,6 +2,87 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Tags, checkStatus, parseJSON } from './commonBlogComponents.js';
 import { formatDate } from './dateformatter.js';
+import range from 'lodash/range';
+
+function IndentedParagraph(props) {
+  return (
+    <p
+      className={props.className}
+      style={{paddingLeft: 32 * props.indentation + 'px'}}>
+      {props.children}
+    </p>
+  );
+}
+
+function Comment(props) {
+  let info = formatDate(new Date(props.comment.date + ' UTC'));
+  // Comment is a reply
+  if (props.comment.parent !== null) {
+    info += (' in reply to ' + props.comment.parentname);
+  }
+  return (
+    <div>
+      <IndentedParagraph className='author' indentation={props.indentation}>
+        {props.comment.author}
+      </IndentedParagraph>
+      <IndentedParagraph className='grayed' indentation={props.indentation}>
+        {info}
+      </IndentedParagraph>
+      <IndentedParagraph indentation={props.indentation}>
+        {props.comment.body}
+      </IndentedParagraph>
+    </div>
+  );
+}
+
+function Comments(props) {
+  if (props.comments.length === 0) {
+    return (
+      <Row>
+        <Col xs={12}>
+          <h3>No comments</h3>
+        </Col>
+      </Row>
+    );
+  }
+
+  // Determine the level of indentation of replies. TODO: Since we're already
+  // iterating through the comments array, it might make sense to not worry
+  // about performing the join in the backend to determine the parentnames
+  // and instead just do it here.
+  let indentations = {};
+  for (let i = 0; i < props.comments.length; i++) {
+    let id = props.comments[i].id;
+    let parent = props.comments[i].parent;
+    if (parent === null) {
+      indentations[id] = 0;
+    } else {
+      indentations[id] = indentations[parent] + 1;
+    }
+  }
+
+  return (
+    <div>
+      <Row>
+        <Col xs={12}>
+          <h3>Comments</h3>
+        </Col>
+      </Row>
+      {range(props.comments.length).map(i => {
+        return (
+          <Row key={i}>
+            <Col xs={12}>
+              <Comment
+                comment={props.comments[i]}
+                indentation={indentations[props.comments[i].id]}
+              />
+            </Col>
+          </Row>
+        );
+      })}
+    </div>
+  );
+}
 
 export class Post extends Component {
   constructor(props) {
@@ -51,7 +132,6 @@ export class Post extends Component {
         </Grid>
       );
     }
-    console.log(this.state.post);
     let post = this.state.post;
     let created = formatDate(new Date(this.state.post.created + ' UTC'))
     let lastupdated = formatDate(
@@ -74,6 +154,7 @@ export class Post extends Component {
             </p>
           </Col>
         </Row>
+        <Comments comments={post.comments}/>
       </Grid>
     );
   }

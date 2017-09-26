@@ -21,3 +21,8 @@
 .loading {
 	color: #777;
 }
+
+.author {
+	font-weight: bold;
+	margin-bottom: 0;
+}

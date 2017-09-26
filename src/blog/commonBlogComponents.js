@@ -1,7 +1,7 @@
 import React from 'react';
-import range from 'lodash/range';
 import { LinkContainer } from 'react-router-bootstrap';
 import { formatDate } from './dateformatter.js';
+import range from 'lodash/range';
 
 export function checkStatus(response) {
   if (response.ok) {
