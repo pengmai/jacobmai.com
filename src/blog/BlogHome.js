@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Pager } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import {
   PostHighlight, checkStatus, parseJSON
 } from './commonBlogComponents.js';
 import range from 'lodash/range';
+
+function contains(a, obj) {
+  let i = a.length;
+  while (i--) {
+    if (a[i] === obj) {
+      return true;
+    }
+  }
+  return false;
+}
 
 export class BlogHome extends Component {
   constructor(props) {
@@ -12,28 +23,51 @@ export class BlogHome extends Component {
     this.state = {
       topTenPosts: [],
       loading: true,
+      hasNext: true,
       error: false
-    }
+    };
 
-    this.retrieveTopTen();
+    this.retrieveTopTen(props.match.params.page);
   }
 
-  retrieveTopTen() {
-    let req = new Request('/api/v1/blogapi.php?request=posts');
+  componentWillReceiveProps(nextProps) {
+    this.retrieveTopTen(nextProps.match.params.page);
+  }
+
+  retrieveTopTen(page) {
+    if (page == null) {
+      page = 1;
+    }
+    let req = new Request('/api/v1/blogapi.php?request=posts/page/'
+      + page);
     fetch(req)
       .then(checkStatus)
       .then(parseJSON)
-      .then((responseBody) => this.setState({
-        topTenPosts: responseBody,
-        loading: false
-      }))
-      .catch(err => {this.setState({
+      .then((responseBody) => {
+        let hasNext = true;
+        if (contains(responseBody, 'end')) {
+          hasNext = false;
+          responseBody.pop();
+        }
+        this.setState({
+          topTenPosts: responseBody,
+          loading: false,
+          hasNext: hasNext
+        });
+      })
+      .catch(err => {
+        this.setState({
         loading: false,
         error: true
-      })});
+      })
+    });
   }
 
   render() {
+    let page = this.props.match.params.page == null ?
+      1 : parseInt(this.props.match.params.page, 10);
+    let nextPage = page + 1;
+    let prevPage = page - 1;
     let topTen = this.state.topTenPosts;
     if (this.state.loading) {
       return (
@@ -55,6 +89,26 @@ export class BlogHome extends Component {
               </Row>
             );
           })}
+          <Row>
+            <Col xs={12}>
+              <Pager>
+                <LinkContainer to={`/blog/page/${prevPage}`}>
+                  <Pager.Item
+                    previous
+                    disabled={page === 1}>
+                    &larr; Previous Page
+                  </Pager.Item>
+                </LinkContainer>
+                <LinkContainer to={`/blog/page/${nextPage}`}>
+                  <Pager.Item
+                    next
+                    disabled={!this.state.hasNext}>
+                    Next Page &rarr;
+                  </Pager.Item>
+                </LinkContainer>
+              </Pager>
+            </Col>
+          </Row>
         </Grid>
       );
     }

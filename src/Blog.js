@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageHeader } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
 import { BlogHome } from './blog/BlogHome.js';
@@ -18,9 +19,12 @@ export function Blog({ match }) {
   return (
     <div>
       <Navigation/>
-      <PageHeader className='text-center'>Blog</PageHeader>
+      <LinkContainer to={match.url}>
+        <a><PageHeader className='text-center title'>Blog</PageHeader></a>
+      </LinkContainer>
       <Switch>
         <Route exact path={match.url} component={BlogHome}/>
+        <Route path={`${match.url}/page/:page`} component={BlogHome}/>
         <Route path={`${match.url}/tagged/:tag`} component={Tagged}/>
         <Route path={`${match.url}/:postid`} component={Post}/>
       </Switch>

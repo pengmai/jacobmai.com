@@ -76,7 +76,9 @@ export function PostHighlight(props) {
       <p className='grayed text-center'>
         Last updated {lastupdated}
       </p>
-      <NumberOfComments numberofcomments={numberofcomments}/>
+      <LinkContainer to={`/blog/${id}`}>
+        <a><NumberOfComments numberofcomments={numberofcomments}/></a>
+      </LinkContainer>
       <br/>
       <div className='underline'/>
     </div>
