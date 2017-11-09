@@ -40,6 +40,7 @@ export class BlogHome extends Component {
     }
     let req = new Request('/api/v1/blogapi.php?request=posts/page/'
       + page);
+    this.setState({ loading: true });
     fetch(req)
       .then(checkStatus)
       .then(parseJSON)
