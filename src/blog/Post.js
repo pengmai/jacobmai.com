@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router';
 import { Tags, checkStatus, parseJSON } from './commonBlogComponents.js';
 import { formatDate } from './dateformatter.js';
 import range from 'lodash/range';
@@ -91,7 +92,8 @@ export class Post extends Component {
     this.state = {
       post: null,
       loading: true,
-      error: false
+      error: false,
+      notFound: false
     };
     this.retrievePost(props.match.params.postid)
   }
@@ -111,7 +113,8 @@ export class Post extends Component {
       .catch((err) => {
         this.setState({
           loading: false,
-          error: true
+          error: true,
+          notFound: err.response.status === 404
         })
       });
   }
@@ -131,7 +134,12 @@ export class Post extends Component {
           </Row>
         </Grid>
       );
+    } else if (this.state.notFound) {
+      return (
+        <Redirect to='/notfound'/>
+      );
     }
+
     let post = this.state.post;
     let created = formatDate(new Date(this.state.post.created + ' UTC'))
     let lastupdated = formatDate(

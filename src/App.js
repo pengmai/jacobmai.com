@@ -5,12 +5,14 @@ import { Navigation } from './Navigation.js';
 import { About } from './About.js';
 import { Blog } from './Blog.js';
 import { Code } from './Code.js';
+import { NotFound } from './NotFound.js';
 import './App.css';
 
 // Routing.
 import {
   BrowserRouter as Router,
   Route,
+  Switch
 } from 'react-router-dom';
 
 function HomeHeader() {
@@ -43,13 +45,14 @@ class App extends Component {
     return (
       <div>
         <Router basename='/' className='body'>
-          <div>
+          <Switch>
             <Route exact path='/' component={HomeHeader}/>
             <Route path='/music' component={Music}/>
             <Route path='/code' component={Code}/>
             <Route path='/blog' component={Blog}/>
             <Route path='/about' component={About}/>
-          </div>
+            <Route component={NotFound}/>
+          </Switch>
         </Router>
       </div>
     );

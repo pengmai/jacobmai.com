@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Pager } from 'react-bootstrap';
+import { Redirect } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   PostHighlight, checkStatus, parseJSON
@@ -24,13 +25,15 @@ export class BlogHome extends Component {
       topTenPosts: [],
       loading: true,
       hasNext: true,
-      error: false
+      error: false,
+      notFound: false
     };
 
     this.retrieveTopTen(props.match.params.page);
   }
 
   componentWillReceiveProps(nextProps) {
+    this.setState({ loading: true });
     this.retrieveTopTen(nextProps.match.params.page);
   }
 
@@ -40,7 +43,6 @@ export class BlogHome extends Component {
     }
     let req = new Request('/api/v1/blogapi.php?request=posts/page/'
       + page);
-    this.setState({ loading: true });
     fetch(req)
       .then(checkStatus)
       .then(parseJSON)
@@ -58,13 +60,18 @@ export class BlogHome extends Component {
       })
       .catch(err => {
         this.setState({
-        loading: false,
-        error: true
-      })
+          loading: false,
+          notFound: err.response.status === 404,
+          error: true
+        });
     });
   }
 
   render() {
+    if (this.state.notFound) {
+      return (<Redirect to='/notfound'/>);
+    }
+
     let page = this.props.match.params.page == null ?
       1 : parseInt(this.props.match.params.page, 10);
     let nextPage = page + 1;
@@ -76,7 +83,7 @@ export class BlogHome extends Component {
       );
     } else if (this.state.error) {
       return (
-        <p>An error has occurred. Please try again.</p>
+        <p className='loading'>An error has occurred. Please try again.</p>
       );
     } else {
       return (
@@ -92,21 +99,26 @@ export class BlogHome extends Component {
           })}
           <Row>
             <Col xs={12}>
+              {this.state.hasNext ? "" :
+                <p className="loading">End of posts.</p>
+              }
               <Pager>
-                <LinkContainer to={`/blog/page/${prevPage}`}>
-                  <Pager.Item
-                    previous
-                    disabled={page === 1}>
-                    &larr; Previous Page
-                  </Pager.Item>
-                </LinkContainer>
-                <LinkContainer to={`/blog/page/${nextPage}`}>
-                  <Pager.Item
-                    next
-                    disabled={!this.state.hasNext}>
-                    Next Page &rarr;
-                  </Pager.Item>
-                </LinkContainer>
+                {page === 1 ? "" :
+                  <LinkContainer to={`/blog/page/${prevPage}`}>
+                    <Pager.Item
+                      previous>
+                      &larr; Previous Page
+                    </Pager.Item>
+                  </LinkContainer>
+                }
+                {this.state.hasNext ?
+                  <LinkContainer to={`/blog/page/${nextPage}`}>
+                    <Pager.Item
+                      next>
+                      Next Page &rarr;
+                    </Pager.Item>
+                  </LinkContainer> : ""
+                }
               </Pager>
             </Col>
           </Row>
