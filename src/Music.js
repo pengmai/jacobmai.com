@@ -37,21 +37,21 @@ export function Music() {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} sm={6} md={4}>
             <MusicPreview
               href="https://indigovioletca.bandcamp.com/album/prelude-the-demo"
               src={preludeImg}
               caption="Prelude"
             />
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} sm={6} md={4}>
             <MusicPreview
               href="https://jacobpeng.bandcamp.com/releases"
               src={aStoryImg}
               caption="A Story About Love"
             />
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} sm={6} md={4}>
             <MusicPreview
               href="https://thesyntheticarmy.bandcamp.com/album/incandescent"
               src={incandescentImg}
