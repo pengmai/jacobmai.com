@@ -100,7 +100,7 @@ export class BlogHome extends Component {
           <Row>
             <Col xs={12}>
               {this.state.hasNext ? "" :
-                <p className="loading">End of posts.</p>
+                <p className="loading">End of posts</p>
               }
               <Pager>
                 {page === 1 ? "" :

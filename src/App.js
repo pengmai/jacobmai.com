@@ -4,6 +4,7 @@ import { Footer } from './Footer.js';
 import { Navigation } from './Navigation.js';
 import { About } from './About.js';
 import { Blog } from './Blog.js';
+import { Music } from './Music.js';
 import { Code } from './Code.js';
 import { NotFound } from './NotFound.js';
 import './App.css';
@@ -25,16 +26,6 @@ function HomeHeader() {
           Musician, Developer, Tester
         </small>
       </PageHeader>
-      <Footer/>
-    </div>
-  );
-}
-
-function Music() {
-  return (
-    <div>
-      <Navigation/>
-      <PageHeader className='text-center'>Music</PageHeader>
       <Footer/>
     </div>
   );

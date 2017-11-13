@@ -41,16 +41,13 @@ function Comments(props) {
     return (
       <Row>
         <Col xs={12}>
-          <h3>No comments</h3>
+          <h4>No comments</h4>
         </Col>
       </Row>
     );
   }
 
-  // Determine the level of indentation of replies. TODO: Since we're already
-  // iterating through the comments array, it might make sense to not worry
-  // about performing the join in the backend to determine the parentnames
-  // and instead just do it here.
+  // Determine the level of indentation of replies.
   let indentations = {};
   for (let i = 0; i < props.comments.length; i++) {
     let id = props.comments[i].id;
@@ -66,7 +63,7 @@ function Comments(props) {
     <div>
       <Row>
         <Col xs={12}>
-          <h3>Comments</h3>
+          <h4>Comments</h4>
         </Col>
       </Row>
       {range(props.comments.length).map(i => {
