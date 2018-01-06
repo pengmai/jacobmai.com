@@ -46,7 +46,7 @@ export function Music() {
           </Col>
           <Col xs={12} sm={6} md={4}>
             <MusicPreview
-              href="https://jacobpeng.bandcamp.com/releases"
+              href="https://jacobmai.bandcamp.com/releases"
               src={aStoryImg}
               caption="A Story About Love"
             />
