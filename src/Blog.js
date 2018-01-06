@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PageHeader } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navigation } from './Navigation.js';
@@ -32,3 +33,9 @@ export function Blog({ match }) {
     </div>
   );
 }
+
+Blog.propTypes = {
+  match: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  }).isRequired
+};

@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents.js';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import SudokuSolver from './sudokusolver/main.js'
+import SudokuSolver from './sudokusolver/main.js';
 import sudokuImg from './sudokusolver/sudoku.png';
 import './Code.css';
 
@@ -19,6 +20,12 @@ export function Code({ match }) {
     </div>
   );
 }
+
+Code.propTypes = {
+  match: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  }).isRequired
+};
 
 function Menu({ match }) {
   return (
@@ -38,15 +45,15 @@ function Menu({ match }) {
         </Row>
         <Row>
           <Col xs={12}>
-              <LinkContainer className='preview'
-                to={`${match.url}/sudokusolver`}>
-                <figure>
-                  <Thumbnail src={sudokuImg}/>
-                  <span className='caption'>
-                    <span>Sudoku Solver</span>
-                  </span>
-                </figure>
-              </LinkContainer>
+            <LinkContainer className='preview'
+              to={`${match.url}/sudokusolver`}>
+              <figure>
+                <Thumbnail src={sudokuImg}/>
+                <span className='caption'>
+                  <span>Sudoku Solver</span>
+                </span>
+              </figure>
+            </LinkContainer>
           </Col>
         </Row>
       </Grid>
@@ -54,3 +61,9 @@ function Menu({ match }) {
     </div>
   );
 }
+
+Menu.propTypes = {
+  match: PropTypes.shape({
+    url: PropTypes.string.isRequired
+  }).isRequired
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * A wrapper to help with spacing and opening anchors in new tabs.
@@ -11,7 +12,7 @@ export function ExternalLink(props) {
         rel='noopener noreferrer'>
         &#8194;{props.label}
       </a>
-    )
+    );
   } else {
     return (
       <a href={props.href}
@@ -22,3 +23,12 @@ export function ExternalLink(props) {
     );
   }
 }
+
+ExternalLink.propTypes = {
+  noSpace: PropTypes.bool,
+  href: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]).isRequired
+};

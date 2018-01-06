@@ -3,7 +3,6 @@ import { PageHeader } from 'react-bootstrap';
 import { Footer } from './Footer.js';
 import { Navigation } from './Navigation.js';
 import { About } from './About.js';
-import { Blog } from './Blog.js';
 import { Music } from './Music.js';
 import { Code } from './Code.js';
 import { NotFound } from './NotFound.js';
@@ -40,7 +39,6 @@ class App extends Component {
             <Route exact path='/' component={HomeHeader}/>
             <Route path='/music' component={Music}/>
             <Route path='/code' component={Code}/>
-            <Route path='/blog' component={Blog}/>
             <Route path='/about' component={About}/>
             <Route component={NotFound}/>
           </Switch>

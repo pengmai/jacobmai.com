@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
@@ -22,6 +23,12 @@ function MusicPreview(props) {
     </a>
   );
 }
+
+MusicPreview.propTypes = {
+  href: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  caption: PropTypes.string.isRequired
+};
 
 export function Music() {
   return (

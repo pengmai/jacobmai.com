@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-export function Navigation(props) {
+export function Navigation() {
   return (
     <Navbar fluid collapseOnSelect>
       <Navbar.Header>
@@ -18,9 +18,6 @@ export function Navigation(props) {
           </LinkContainer>
           <LinkContainer to='/code'>
             <NavItem>Code</NavItem>
-          </LinkContainer>
-          <LinkContainer to='/blog'>
-            <NavItem>Blog</NavItem>
           </LinkContainer>
           <LinkContainer to='/about'>
             <NavItem>About</NavItem>

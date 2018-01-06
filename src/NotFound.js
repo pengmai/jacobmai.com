@@ -7,7 +7,7 @@ export function NotFound() {
     <div>
       <Navigation/>
       <h3 id="home-page-header">
-        We couldn't find the page you were looking for.
+        We couldn&apos;t find the page you were looking for.
       </h3>
       <Footer/>
     </div>

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "lodash.range": "^3.2.0",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
@@ -13,6 +14,9 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "babel-eslint": "^8.1.2",
+    "eslint": "^4.14.0",
+    "eslint-plugin-react": "^7.5.1",
     "react-scripts": "1.0.11"
   },
   "scripts": {
