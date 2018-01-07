@@ -4,10 +4,10 @@ import { PageHeader } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import { BlogHome } from './blog/BlogHome.js';
-import { Post } from './blog/Post.js';
-import { Tagged } from './blog/Tagged.js';
-import './Blog.css';
+import { BlogHome } from '../blog/BlogHome.js';
+import { Post } from '../blog/Post.js';
+import { Tagged } from '../blog/Tagged.js';
+import '../styles/Blog.css';
 
 // Routing.
 import { Route, Switch } from 'react-router-dom';

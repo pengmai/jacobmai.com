@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import aStoryImg from './aStoryAboutLove.jpg';
-import preludeImg from './prelude.jpg';
-import incandescentImg from './incandescent.jpg';
+import aStoryImg from '../images/aStoryAboutLove.jpg';
+import preludeImg from '../images/prelude.jpg';
+import incandescentImg from '../images/incandescent.jpg';
 
-// TODO: These classnames are in Code.css, put them somewhere better.
 function MusicPreview(props) {
   return (
     <a className='preview'

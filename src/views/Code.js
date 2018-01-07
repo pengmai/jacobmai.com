@@ -4,9 +4,9 @@ import { PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents.js';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import SudokuSolver from './sudokusolver/main.js';
-import sudokuImg from './sudokusolver/sudoku.png';
-import './Code.css';
+import SudokuSolver from '../sudokusolver/main.js';
+import sudokuImg from '../sudokusolver/sudoku.png';
+import '../styles/gallery.css';
 
 // Routing.
 import { LinkContainer } from 'react-router-bootstrap';

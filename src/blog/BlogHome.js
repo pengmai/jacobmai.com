@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col, Pager } from 'react-bootstrap';
 import { Redirect } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -18,6 +19,14 @@ function contains(a, obj) {
 }
 
 export class BlogHome extends Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        page: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  }
+
   constructor(props) {
     super(props);
 
@@ -64,7 +73,7 @@ export class BlogHome extends Component {
           notFound: err.response.status === 404,
           error: true
         });
-    });
+      });
   }
 
   render() {
@@ -99,11 +108,11 @@ export class BlogHome extends Component {
           })}
           <Row>
             <Col xs={12}>
-              {this.state.hasNext ? "" :
+              {this.state.hasNext ? '' :
                 <p className="loading">End of posts</p>
               }
               <Pager>
-                {page === 1 ? "" :
+                {page === 1 ? '' :
                   <LinkContainer to={`/blog/page/${prevPage}`}>
                     <Pager.Item
                       previous>
@@ -117,7 +126,7 @@ export class BlogHome extends Component {
                       next>
                       Next Page &rarr;
                     </Pager.Item>
-                  </LinkContainer> : ""
+                  </LinkContainer> : ''
                 }
               </Pager>
             </Col>

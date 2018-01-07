@@ -3,8 +3,8 @@ import { PageHeader, Image, Grid, Row, Col } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents.js';
 import { Navigation } from './Navigation.js';
 import { Footer } from './Footer.js';
-import me from './me.jpg';
-import './About.css';
+import me from '../images/me.jpg';
+import '../styles/About.css';
 
 export function About() {
   return (
