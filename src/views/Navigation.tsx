@@ -1,25 +1,25 @@
 import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Navigation() {
   return (
-    <Navbar fluid collapseOnSelect>
+    <Navbar fluid={true} collapseOnSelect={true}>
       <Navbar.Header>
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
-        <Nav pullRight>
-          <LinkContainer exact to='/'>
+        <Nav pullRight={true}>
+          <LinkContainer exact={true} to="/">
             <NavItem>Home</NavItem>
           </LinkContainer>
-          <LinkContainer to='/music'>
+          <LinkContainer to="/music">
             <NavItem>Music</NavItem>
           </LinkContainer>
-          <LinkContainer to='/code'>
+          <LinkContainer to="/code">
             <NavItem>Code</NavItem>
           </LinkContainer>
-          <LinkContainer to='/about'>
+          <LinkContainer to="/about">
             <NavItem>About</NavItem>
           </LinkContainer>
         </Nav>

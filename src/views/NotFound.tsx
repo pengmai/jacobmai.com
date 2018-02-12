@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navigation } from './Navigation.js';
-import { Footer } from './Footer.js';
+import { Footer } from './Footer';
+import { Navigation } from './Navigation';
 
 export function NotFound() {
   return (

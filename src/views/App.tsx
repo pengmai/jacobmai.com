@@ -1,11 +1,12 @@
 import React from 'react';
 import { PageHeader } from 'react-bootstrap';
-import { Footer } from './Footer';
-import { Navigation } from './Navigation';
 import { About } from './About';
-import { Music } from './Music';
 import { Code } from './Code';
+import { Footer } from './Footer';
+import { Music } from './Music';
+import { Navigation } from './Navigation';
 import { NotFound } from './NotFound';
+
 import '../styles/App.css';
 
 // Routing.
@@ -19,9 +20,9 @@ function HomeHeader() {
   return (
     <div>
       <Navigation/>
-      <PageHeader id='home-page-header' className='text-center'>
-        <div className='tagline-upper'>Jacob Mai</div>
-        <small className='tagline-lower'>
+      <PageHeader id="home-page-header" className="text-center">
+        <div className="tagline-upper">Jacob Mai</div>
+        <small className="tagline-lower">
           Musician, Developer, Tester
         </small>
       </PageHeader>
@@ -32,12 +33,12 @@ function HomeHeader() {
 
 export default function App() {
   return (
-    <Router basename='/' className='body'>
+    <Router basename="/">
       <Switch>
-        <Route exact path='/' component={HomeHeader}/>
-        <Route path='/music' component={Music}/>
-        <Route path='/code' component={Code}/>
-        <Route path='/about' component={About}/>
+        <Route exact={true} path="/" component={HomeHeader}/>
+        <Route path="/music" component={Music}/>
+        <Route path="/code" component={Code}/>
+        <Route path="/about" component={About}/>
         <Route component={NotFound}/>
       </Switch>
     </Router>
