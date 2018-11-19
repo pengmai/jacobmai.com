@@ -1,4 +1,5 @@
 import React from 'react';
+import { Thumbnail } from 'react-bootstrap';
 
 export interface Props {
   noSpace?: boolean;
@@ -33,11 +34,26 @@ export function ExternalLink(props: Props) {
   }
 }
 
-// ExternalLink.propTypes = {
-//   noSpace: PropTypes.bool,
-//   href: PropTypes.string.isRequired,
-//   label: PropTypes.oneOfType([
-//     PropTypes.string,
-//     PropTypes.element
-//   ]).isRequired
-// };
+interface ExternalPreviewProps {
+  href: string;
+  src: string;
+  caption: string;
+}
+
+export function ExternalPreview(props: ExternalPreviewProps) {
+  return (
+    <a
+      className="preview"
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <figure>
+        <Thumbnail src={props.src}/>
+        <span className="caption">
+          <span>{props.caption}</span>
+        </span>
+      </figure>
+    </a>
+  );
+}

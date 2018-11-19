@@ -1,35 +1,12 @@
 import React from 'react';
-import { Col, Grid, PageHeader, Row, Thumbnail } from 'react-bootstrap';
+import { Col, Grid, PageHeader, Row } from 'react-bootstrap';
+import { ExternalPreview } from './commonComponents';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
 import aStoryImg from '../images/aStoryAboutLove.jpg';
 import incandescentImg from '../images/incandescent.jpg';
 import preludeImg from '../images/prelude.jpg';
-
-export interface Props {
-  href: string;
-  src: string;
-  caption: string;
-}
-
-function MusicPreview(props: Props) {
-  return (
-    <a
-      className="preview"
-      href={props.href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <figure>
-        <Thumbnail src={props.src}/>
-        <span className="caption">
-          <span>{props.caption}</span>
-        </span>
-      </figure>
-    </a>
-  );
-}
 
 export function Music() {
   return (
@@ -46,21 +23,21 @@ export function Music() {
         </Row>
         <Row>
           <Col xs={12} sm={6} md={4}>
-            <MusicPreview
+            <ExternalPreview
               href="https://indigovioletca.bandcamp.com/album/prelude-the-demo"
               src={preludeImg}
               caption="Prelude"
             />
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <MusicPreview
+            <ExternalPreview
               href="https://jacobmai.bandcamp.com/releases"
               src={aStoryImg}
               caption="A Story About Love"
             />
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <MusicPreview
+            <ExternalPreview
               href="https://thesyntheticarmy.bandcamp.com/album/incandescent"
               src={incandescentImg}
               caption="Incandescent"

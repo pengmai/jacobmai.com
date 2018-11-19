@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Grid, PageHeader, Row, Thumbnail } from 'react-bootstrap';
-import { ExternalLink } from './commonComponents';
+import { ExternalLink, ExternalPreview } from './commonComponents';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
 import SudokuSolver from '../sudokusolver/main';
 
+import workoutImg from '../images/workouttracker.png';
 import '../styles/gallery.css';
 import sudokuImg from '../sudokusolver/sudoku.png';
 
@@ -48,7 +49,7 @@ function Menu({ match }: Props) {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
+          <Col xs={12} sm={6}>
             <LinkContainer
               className="preview"
               to={`${match.url}/sudokusolver`}
@@ -60,6 +61,13 @@ function Menu({ match }: Props) {
                 </span>
               </figure>
             </LinkContainer>
+          </Col>
+          <Col xs={12} sm={6}>
+            <ExternalPreview
+              href="https://github.com/pengmai/workout-tracker"
+              src={workoutImg}
+              caption="Workout Tracker"
+            />
           </Col>
         </Row>
       </Grid>

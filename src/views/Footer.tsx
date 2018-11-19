@@ -3,9 +3,9 @@ import { Col, Grid, Row } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents';
 
 // Icons
-import Facebook from 'react-icons/lib/fa/facebook-square';
-import Github from 'react-icons/lib/fa/github';
-import Youtube from 'react-icons/lib/fa/youtube-square';
+import {
+  FaFacebookSquare, FaGithub, FaYoutubeSquare
+} from 'react-icons/fa';
 
 export function Footer() {
   return(
@@ -14,19 +14,19 @@ export function Footer() {
         <Col xs={4}>
           <ExternalLink
             href="https://www.youtube.com/channel/UCwzBKt0x2hl66aaL2QuqF0w"
-            label={<Youtube className="social-icon"/>}
+            label={<FaYoutubeSquare className="social-icon"/>}
           />
         </Col>
         <Col xs={4}>
           <ExternalLink
             href="https://github.com/pengmai"
-            label={<Github className="social-icon"/>}
+            label={<FaGithub className="social-icon"/>}
           />
         </Col>
         <Col xs={4}>
           <ExternalLink
             href="https://www.facebook.com/jacob.peng.5"
-            label={<Facebook className="social-icon"/>}
+            label={<FaFacebookSquare className="social-icon"/>}
           />
         </Col>
       </Row>

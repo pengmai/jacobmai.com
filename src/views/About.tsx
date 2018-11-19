@@ -21,13 +21,13 @@ export function About() {
           </Col>
           <Col xs={12} sm={9} md={10}>
             <div>
-              Hello! I&#39;m Jacob, a singer-songwriter and third year Computer
+              Hello! I&#39;m Jacob, a singer-songwriter and fourth year Computer
               Science student studying at the University of Toronto.
               <br/> <br/>
               Some facts:
               <ul>
                 <li>
-                  I&#39;m currently on PEY at
+                  I recently finished my PEY at
                   <ExternalLink
                     href="https://www.chapters.indigo.ca/en-ca/"
                     label="Indigo Books &amp; Music"
@@ -35,7 +35,7 @@ export function About() {
                   as a Junior QA Developer.
                 </li>
                 <li>
-                  I&#39;m also in a band coincidentally named
+                  I was in a band coincidentally named
                   <ExternalLink
                     href="https://indigovioletca.bandcamp.com"
                     label="Indigo Violet"
@@ -44,7 +44,7 @@ export function About() {
                   working there.
                 </li>
                 <li>
-                  I was in a band called
+                  I was also in a band called
                   <ExternalLink
                     href="https://facebook.com/syntheticarmy/"
                     label="The Synthetic Army"
@@ -78,7 +78,7 @@ export function About() {
                 </li>
                 <li>
                   My favourite movie is Big Hero 6 and I have a Baymax plushie
-                  at my desk at work.
+                  at my desk.
                 </li>
                 <li>
                   I&#39;m a feminist and a vegetarian.
