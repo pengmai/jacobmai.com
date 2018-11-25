@@ -4,7 +4,7 @@ import { ExternalLink } from './commonComponents';
 
 // Icons
 import {
-  FaFacebookSquare, FaGithub, FaYoutubeSquare
+  FaGithub, FaYoutubeSquare, FaLinkedin
 } from 'react-icons/fa';
 
 export function Footer() {
@@ -25,8 +25,8 @@ export function Footer() {
         </Col>
         <Col xs={4}>
           <ExternalLink
-            href="https://www.facebook.com/jacob.peng.5"
-            label={<FaFacebookSquare className="social-icon"/>}
+            href="https://www.linkedin.com/in/jacob-peng-37436112a/"
+            label={<FaLinkedin className="social-icon"/>}
           />
         </Col>
       </Row>
