@@ -1,5 +1,5 @@
 import React from 'react';
-import { Thumbnail } from 'react-bootstrap';
+import { CardImg } from 'react-bootstrap';
 
 export interface Props {
   noSpace?: boolean;
@@ -34,6 +34,19 @@ export function ExternalLink(props: Props) {
   }
 }
 
+// interface PageHeaderProps {
+//   children: any;
+// }
+export function PageHeader(props: any) {
+  return (
+    <div className="pb-2 mt-4 mb-2 border-bottom page-header text-center" {...props}>
+      <h1>
+        {props.children}
+      </h1>
+    </div>
+  );
+}
+
 interface ExternalPreviewProps {
   href: string;
   src: string;
@@ -49,7 +62,7 @@ export function ExternalPreview(props: ExternalPreviewProps) {
       rel="noopener noreferrer"
     >
       <figure>
-        <Thumbnail src={props.src}/>
+        <CardImg src={props.src}/>
         <span className="caption">
           <span>{props.caption}</span>
         </span>

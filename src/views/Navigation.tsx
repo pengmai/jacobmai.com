@@ -4,12 +4,12 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 export function Navigation() {
   return (
-    <Navbar fluid={true} collapseOnSelect={true}>
-      <Navbar.Header>
+    <Navbar collapseOnSelect={true}>
+      <Navbar.Brand>
         <Navbar.Toggle />
-      </Navbar.Header>
+      </Navbar.Brand>
       <Navbar.Collapse>
-        <Nav pullRight={true}>
+        <Nav className="float-right">
           <LinkContainer exact={true} to="/">
             <NavItem>Home</NavItem>
           </LinkContainer>

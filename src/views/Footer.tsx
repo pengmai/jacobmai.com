@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { ExternalLink } from './commonComponents';
 
 // Icons
@@ -9,7 +9,7 @@ import {
 
 export function Footer() {
   return(
-    <Grid className="footer">
+    <Container className="footer">
       <Row>
         <Col xs={4}>
           <ExternalLink
@@ -30,6 +30,6 @@ export function Footer() {
           />
         </Col>
       </Row>
-    </Grid>
+    </Container>
   );
 }

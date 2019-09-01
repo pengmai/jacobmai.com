@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Grid, PageHeader, Row } from 'react-bootstrap';
-import { ExternalPreview } from './commonComponents';
+import { Col, Container, Row } from 'react-bootstrap';
+import { ExternalPreview, PageHeader } from './commonComponents';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
@@ -37,7 +37,7 @@ export function Music() {
     <div>
       <Navigation/>
       <PageHeader className="text-center">Music</PageHeader>
-      <Grid>
+      <Container>
         <Row>
           <Col xs={12}>
             <p className="text-center">
@@ -56,7 +56,7 @@ export function Music() {
             </Col>
           )}
         </Row>
-      </Grid>
+      </Container>
       <Footer/>
     </div>
   );

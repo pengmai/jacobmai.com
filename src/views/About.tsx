@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Grid, Image, PageHeader, Row } from 'react-bootstrap';
-import { ExternalLink } from './commonComponents';
+import { Col, Container, Image, Row } from 'react-bootstrap';
+import { ExternalLink, PageHeader } from './commonComponents';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
@@ -13,11 +13,11 @@ export function About() {
   return (
     <div>
       <Navigation/>
-      <PageHeader className="text-center">About</PageHeader>
-      <Grid>
+      <PageHeader>About</PageHeader>
+      <Container>
         <Row>
           <Col xs={12} sm={3} md={2}>
-            <Image id="me" src={me} alt="me" circle={true}/>
+            <Image id="me" src={me} alt="me" className="rounded-circle"/>
           </Col>
           <Col xs={12} sm={9} md={10}>
             <div>
@@ -91,7 +91,7 @@ export function About() {
             </div>
           </Col>
         </Row>
-      </Grid>
+      </Container>
       <Footer/>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Grid, PageHeader, Row, Thumbnail } from 'react-bootstrap';
-import { ExternalLink, ExternalPreview } from './commonComponents';
+import { Col, Container, Row, CardImg } from 'react-bootstrap';
+import { ExternalLink, ExternalPreview, PageHeader } from './commonComponents';
 import { Footer } from './Footer';
 import { Navigation } from './Navigation';
 
@@ -34,7 +34,7 @@ function Menu({ match }: Props) {
     <div>
       <Navigation/>
       <PageHeader className="text-center">Code</PageHeader>
-      <Grid>
+      <Container>
         <Row>
           <Col xs={12}>
             <p className="text-center">
@@ -55,7 +55,7 @@ function Menu({ match }: Props) {
               to={`${match.url}/sudokusolver`}
             >
               <figure>
-                <Thumbnail src={sudokuImg}/>
+                <CardImg src={sudokuImg}/>
                 <span className="caption">
                   <span>Sudoku Solver</span>
                 </span>
@@ -70,7 +70,7 @@ function Menu({ match }: Props) {
             />
           </Col>
         </Row>
-      </Grid>
+      </Container>
       <Footer/>
     </div>
   );
