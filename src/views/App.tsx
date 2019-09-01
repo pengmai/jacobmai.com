@@ -13,37 +13,37 @@ import '../styles/App.css';
 
 // Routing.
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch
+	BrowserRouter as Router,
+	Route,
+	Switch
 } from 'react-router-dom';
 
 function HomeHeader() {
-  return (
-    <div>
-      <Navigation/>
-      <PageHeader id="home-page-header" className="text-center">
-        <div className="tagline-upper">Jacob Mai</div>
-        <small className="tagline-lower">
-          Musician, Developer, Tester
-        </small>
-      </PageHeader>
-      <Footer/>
-    </div>
-  );
+	return (
+		<div>
+			<Navigation/>
+			<PageHeader id="home-page-header" className="text-center">
+				<div className="tagline-upper">Jacob Mai</div>
+				<small className="tagline-lower">
+					Musician, Developer, Tester
+				</small>
+			</PageHeader>
+			<Footer/>
+		</div>
+	);
 }
 
 export default function App() {
-  return (
-    <Router basename="/">
-      <Switch>
-        <Route exact={true} path="/" component={HomeHeader}/>
-        <Route path="/music" component={Music}/>
-        <Route path="/code" component={Code}/>
-        <Route path="/about" component={About}/>
-        <Route path="/names" component={NameRNN}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </Router>
-  );
+	return (
+		<Router basename="/">
+			<Switch>
+				<Route exact={true} path="/" component={HomeHeader}/>
+				<Route path="/music" component={Music}/>
+				<Route path="/code" component={Code}/>
+				<Route path="/about" component={About}/>
+				<Route path="/names" component={NameRNN}/>
+				<Route component={NotFound}/>
+			</Switch>
+		</Router>
+	);
 }
