@@ -33,7 +33,7 @@ function Menu({ match }: Props) {
 	return (
 		<div>
 			<Navigation/>
-			<PageHeader className="text-center">Code</PageHeader>
+			<PageHeader>Code</PageHeader>
 			<Container>
 				<Row>
 					<Col xs={12}>
@@ -49,7 +49,7 @@ function Menu({ match }: Props) {
 					</Col>
 				</Row>
 				<Row>
-					<Col xs={12} sm={6}>
+					<Col xs={12} md={6}>
 						<LinkContainer
 							className="preview"
 							to={`${match.url}/sudokusolver`}
@@ -62,7 +62,7 @@ function Menu({ match }: Props) {
 							</figure>
 						</LinkContainer>
 					</Col>
-					<Col xs={12} sm={6}>
+					<Col xs={12} md={6}>
 						<ExternalPreview
 							href="https://github.com/pengmai/workout-tracker"
 							src={workoutImg}

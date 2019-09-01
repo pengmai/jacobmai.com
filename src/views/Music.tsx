@@ -36,7 +36,7 @@ export function Music() {
 	return (
 		<div>
 			<Navigation/>
-			<PageHeader className="text-center">Music</PageHeader>
+			<PageHeader>Music</PageHeader>
 			<Container>
 				<Row>
 					<Col xs={12}>
@@ -47,7 +47,7 @@ export function Music() {
 				</Row>
 				<Row>
 					{images.map((im) =>
-						<Col xs={12} sm={6} key={im.caption}>
+						<Col xs={12} md={6} key={im.caption}>
 							<ExternalPreview
 								href={im.href}
 								src={im.src}

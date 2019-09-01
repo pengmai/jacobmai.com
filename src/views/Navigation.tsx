@@ -1,26 +1,24 @@
 import React from 'react';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export function Navigation() {
 	return (
-		<Navbar collapseOnSelect={true}>
-			<Navbar.Brand>
-				<Navbar.Toggle />
-			</Navbar.Brand>
+		<Navbar collapseOnSelect={true} expand="md" className="justify-content-end">
+			<Navbar.Toggle />
 			<Navbar.Collapse>
-				<Nav className="float-right">
+				<Nav className="ml-auto">
 					<LinkContainer exact={true} to="/">
-						<NavItem>Home</NavItem>
+						<Nav.Link>Home</Nav.Link>
 					</LinkContainer>
 					<LinkContainer to="/music">
-						<NavItem>Music</NavItem>
+						<Nav.Link>Music</Nav.Link>
 					</LinkContainer>
 					<LinkContainer to="/code">
-						<NavItem>Code</NavItem>
+						<Nav.Link>Code</Nav.Link>
 					</LinkContainer>
 					<LinkContainer to="/about">
-						<NavItem>About</NavItem>
+						<Nav.Link>About</Nav.Link>
 					</LinkContainer>
 				</Nav>
 			</Navbar.Collapse>

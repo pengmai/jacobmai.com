@@ -39,7 +39,7 @@ export function ExternalLink(props: Props) {
 // }
 export function PageHeader(props: any) {
 	return (
-		<div className="pb-2 mt-4 mb-2 border-bottom page-header text-center" {...props}>
+		<div className="page-header text-center" {...props}>
 			<h1>
 				{props.children}
 			</h1>
