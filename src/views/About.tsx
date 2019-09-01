@@ -16,10 +16,10 @@ export function About() {
 			<PageHeader>About</PageHeader>
 			<Container>
 				<Row>
-					<Col xs={12} sm={3} md={2}>
+					<Col xs={12} md={3} lg={2}>
 						<Image id="me" src={me} alt="me" className="rounded-circle"/>
 					</Col>
-					<Col xs={12} sm={9} md={10}>
+					<Col xs={12} md={9} lg={10}>
 						<div>
 							Hello! I&#39;m Jacob, a singer-songwriter and fourth year Computer
 							Science student studying at the University of Toronto.

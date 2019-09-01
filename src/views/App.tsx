@@ -22,11 +22,11 @@ function HomeHeader() {
 	return (
 		<div>
 			<Navigation/>
-			<PageHeader id="home-page-header" className="text-center">
+			<PageHeader id="home-page-header">
 				<div className="tagline-upper">Jacob Mai</div>
-				<small className="tagline-lower">
+				<div className="tagline-lower">
 					Musician, Developer, Tester
-				</small>
+				</div>
 			</PageHeader>
 			<Footer/>
 		</div>
