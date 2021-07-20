@@ -21,13 +21,13 @@ export function About() {
 					</Col>
 					<Col xs={12} md={9} lg={10}>
 						<div>
-							Hello! I&#39;m Jacob, a singer-songwriter and fourth year Computer
-							Science student studying at the University of Toronto.
+							Hello! I&#39;m Jacob, a singer-songwriter and recent Computer
+							Science graduate from the University of Toronto.
 							<br/> <br/>
 							Some facts:
 							<ul>
 								<li>
-									I recently finished my PEY at
+									I did my PEY at
 									<ExternalLink
 										href="https://www.chapters.indigo.ca/en-ca/"
 										label="Indigo Books &amp; Music"

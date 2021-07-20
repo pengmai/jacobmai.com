@@ -25,7 +25,7 @@ function HomeHeader() {
 			<PageHeader id="home-page-header">
 				<div className="tagline-upper">Jacob Mai</div>
 				<div className="tagline-lower">
-					Musician, Developer, Tester
+					Musician, Developer, AI Enthusiast
 				</div>
 			</PageHeader>
 			<Footer/>
