@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('src/head.ejs', { title: 'Jacob Mai Peng' }) %>
+  <body>
+    <div id="root">
+      <%- include('src/header.ejs') %>
+      <main>
+        <section>
+          <div class="intro">
+            <div id="me" class="shadow">
+              <img src="images/me.jpg" alt="" />
+            </div>
+            <div>
+              <p>
+                Hi! I'm Jacob, an M. Sc. student in compilers for machine
+                learning at
+                <a href="https://cs.mcgill.ca/" target="_blank"
+                  >McGill University</a
+                >.
+              </p>
+              <br />
+              <p>
+                I am a member of the Compilers and Accelerator Synthesis lab
+                under the supervision of Professor
+                <a href="https://cdubach.bitbucket.io" target="_blank"
+                  >Christophe Dubach</a
+                >. My research interests broadly include program
+                transformations, static analysis, and automatic differentiation.
+              </p>
+              <!-- <br />
+              <p>In addition to my research, I'm a lifelong musician.</p> -->
+            </div>
+          </div>
+        </section>
+        <br />
+        <section>
+          <h2>Publications</h2>
+          <div class="card">
+            <h5>
+              <a href="https://doi.org/10.1145/3578360.3580259" target="_blank"
+                >LAGrad: Statically Optimized Differentiable Programming in
+                MLIR</a
+              >
+            </h5>
+            <p class="subtitle">Mai Jacob Peng &amp; Christophe Dubach</p>
+            <p>
+              <em
+                >ACM SIGPLAN International Conference on Compiler Construction
+                (CC &apos;23)</em
+              >
+            </p>
+            <div class="bubble-group">
+              <a class="bubble" href="/static/preprint.pdf" target="_blank"
+                >preprint</a
+              >
+              <a
+                class="bubble"
+                href="https://doi.org/10.6084/m9.figshare.21964787.v1"
+                target="_blank"
+                >artifact</a
+              >
+            </div>
+          </div>
+        </section>
+        <br />
+        <section>
+          <h2>Presentations</h2>
+          <div class="card">
+            <h5>
+              <a
+                href="https://pretalx.enzyme.csail.mit.edu/enzymecon-2023/talk/KCZKS8/"
+                target="_blank"
+                >Hackable Autodiff: Extending Enzyme to MLIR for Reverse Mode
+                Gradients</a
+              >
+            </h5>
+            <div class="space-between subtitle">
+              <p>February 23rd, 2023</p>
+              <p><em>Co-presenting with Martin Eppert</em></p>
+            </div>
+            <p>
+              <em>Enzyme Conference, Boulder, Colorado</em>
+            </p>
+          </div>
+          <div class="card">
+            <h5>
+              <a
+                href="https://cdp-workshop.github.io/CDP/program/"
+                target="_blank"
+                >LAGrad: Leveraging the MLIR Ecosystem for Efficient
+                Differentiable Programming</a
+              >
+            </h5>
+            <p class="subtitle">November 15th, 2022</p>
+            <p>
+              <em
+                >19th Workshop on Compiler-Driven Performance, Toronto,
+                Ontario</em
+              >
+            </p>
+          </div>
+          <div class="card">
+            <h5>
+              <a href=""
+                >LAGrad: Leveraging the MLIR Ecosystem for Efficient
+                Differentiable Programming</a
+              >
+            </h5>
+            <p class="subtitle">November 8th, 2022</p>
+            <p>
+              <em>US LLVM Developers' Meeting, San Jose, California</em>
+            </p>
+            <div class="bubble-group">
+              <a
+                class="bubble"
+                href="https://llvm.org/devmtg/2022-11/slides/StudentTalk4-LAGradLeveragingMLIRForEfficientDifferentiableProgramming.pdf"
+                target="_blank"
+                >slides</a
+              >
+              <a
+                class="bubble"
+                href="https://youtu.be/HPv8VUWGAvw"
+                target="_blank"
+                >recording</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <br />
+      <%- include("src/footer.ejs") %>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
