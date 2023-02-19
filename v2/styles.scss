@@ -1,0 +1,214 @@
+$offblack: #242424;
+$maxwidth: 800px;
+$sm-break: 576px;
+
+html {
+  box-sizing: border-box;
+  background-color: #eee;
+  color: $offblack;
+  line-height: 1.6em;
+  font-family: "Khula", sans-serif;
+}
+
+#root {
+  margin: auto;
+  max-width: $maxwidth;
+}
+
+.intro {
+  margin-bottom: 16px;
+}
+
+@mixin shadow {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+@mixin transition {
+  // transition: color 300ms;
+}
+
+@mixin link-dark {
+  color: $offblack;
+
+  &:hover,
+  &:focus {
+    color: #444;
+    text-decoration: none;
+  }
+}
+
+.shadow {
+  @include shadow();
+}
+
+hr {
+  border-top: 1px solid #aaa;
+}
+
+header {
+  text-align: center;
+  margin: 16px;
+
+  .title {
+    @include link-dark();
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    font-weight: 300;
+    padding-top: 24px;
+  }
+}
+
+footer {
+  margin: 16px;
+  text-align: center;
+  color: #777;
+}
+
+section {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.card {
+  @include shadow;
+  padding: 10px 12px 8px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+
+  .subtitle {
+    margin-bottom: 8px;
+  }
+
+  h5 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  p {
+    line-height: normal;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  @media only screen and (min-width: $sm-break) {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+$icon-dim: 25px;
+.social-icon {
+  @include link-dark();
+  font-size: 12px;
+  line-height: 14px;
+  // height: $icon-dim;
+}
+
+.social-icon svg {
+  height: $icon-dim;
+  width: $icon-dim;
+}
+
+.social-icon span {
+  line-height: 10px;
+  font-size: 12px;
+}
+
+.bubble-group {
+  margin: 2px 0 4px;
+}
+
+.bubble {
+  @include transition;
+  font-size: 12px;
+  border: 1px solid #3881ef;
+  border-radius: 16px;
+  padding: 3px 6px 1px;
+}
+
+.bubble:hover {
+  cursor: pointer;
+}
+
+.bubble:hover,
+.bubble:focus {
+  background-color: #3881ef;
+  color: #fff;
+  text-decoration: none;
+}
+
+a {
+  @include transition;
+  text-decoration: none;
+  color: #3881ef;
+}
+
+a:hover,
+a:focus {
+  color: #195fc7;
+  text-decoration: underline;
+}
+
+.intro p {
+  margin: 0;
+}
+
+#me {
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  float: right;
+  overflow: hidden;
+}
+
+#me img {
+  margin-top: -10px;
+  margin-left: -12px;
+  width: 95px;
+  height: 95px;
+}
+
+@media only screen and (min-width: $sm-break) {
+  #me {
+    width: 120px;
+    height: 120px;
+  }
+
+  #me img {
+    margin-top: -20px;
+    margin-left: -22px;
+    width: 163px;
+    height: 163px;
+  }
+
+  $icon-dim: 30px;
+  .social-icon svg {
+    height: $icon-dim;
+    width: $icon-dim;
+  }
+}
