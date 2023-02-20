@@ -7,7 +7,7 @@ html {
   background-color: #eee;
   color: $offblack;
   line-height: 1.6em;
-  font-family: "Khula", sans-serif;
+  font-family: 'Khula', sans-serif;
 }
 
 #root {
@@ -24,7 +24,9 @@ html {
 }
 
 @mixin transition {
-  // transition: color 300ms;
+  transition-property: background-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 @mixin link-dark {
@@ -32,7 +34,7 @@ html {
 
   &:hover,
   &:focus {
-    color: #444;
+    color: #666;
     text-decoration: none;
   }
 }
@@ -210,5 +212,37 @@ a:focus {
   .social-icon svg {
     height: $icon-dim;
     width: $icon-dim;
+  }
+}
+
+.music-section {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .grid-item {
+      @include link-dark();
+      width: calc(50% - 16px);
+      max-width: 320px;
+      margin-bottom: 12px;
+
+      img {
+        width: 100%;
+        border-radius: 3px;
+      }
+
+      span {
+        display: block;
+        position: relative;
+        top: -4px;
+      }
+
+      .year {
+        line-height: 14px;
+        font-size: 14px;
+        color: #777;
+      }
+    }
   }
 }

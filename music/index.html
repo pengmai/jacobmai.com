@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('src/head.ejs', { title: 'Music - Jacob Mai Peng' }) %>
+  <body>
+    <div id="root">
+      <%- include('src/header.ejs') %>
+      <main>
+        <section class="music-section">
+          <h2>Music</h2>
+          <div class="grid">
+            <% albums.forEach(album => { %>
+            <a class="grid-item" href="<%= album.href %>" target="_blank">
+              <img src="<%= album.img %>" alt="<%= album.alt %>" />
+              <div class="caption">
+                <span><%- album.title %></span>
+                <span class="year"><%- album.year %></span>
+              </div>
+            </a>
+            <% }) %>
+          </div>
+        </section>
+      </main>
+      <br />
+      <%- include("src/footer.ejs") %>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
