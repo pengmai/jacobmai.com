@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { resolve } from 'path';
 
 const albums = [
@@ -46,6 +47,7 @@ export default defineConfig({
   },
   plugins: [
     ViteEjsPlugin({ albums }),
+    ViteMinifyPlugin({}),
     {
       name: 'template-reload',
       enforce: 'post',

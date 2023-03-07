@@ -1,4 +1,5 @@
 $offblack: #242424;
+$lightgrey: #545454;
 $maxwidth: 800px;
 $sm-break: 576px;
 
@@ -212,6 +213,48 @@ a:focus {
   .social-icon svg {
     height: $icon-dim;
     width: $icon-dim;
+  }
+}
+
+.projects {
+  h5 > a {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .project-icon {
+    margin-right: 6px;
+    height: 30px;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  .helpmeicon {
+    display: inline-block;
+    background-color: #193b54;
+    border-radius: 8px;
+    height: 30px;
+
+    img {
+      margin-top: 9px;
+      width: 30px;
+      height: auto;
+    }
+  }
+
+  p {
+    margin-bottom: 6px;
+  }
+
+  .tag {
+    font-size: 12px;
+    // border: 1px solid $lightgrey;
+    color: $lightgrey;
+    border-radius: 16px;
+    padding: 3px 6px 1px;
   }
 }
 
